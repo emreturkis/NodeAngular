@@ -17,7 +17,7 @@ var app = express();
 
 var connection = require('./config/database')(mongoose);
 var models = require('./models/models')(connection);
-require('./config/passport')(passport,models); // pass passport for configuration
+//require('./config/passport')(passport,models); // pass passport for configuration
 
 
 app.configure(function() {
@@ -37,14 +37,14 @@ app.configure(function() {
     //app.use(flash()); // use connect-flash for flash messages stored in session
 
     //passport configuration
-    app.use(passport.initialize());
+    //app.use(passport.initialize());
     //app.use(passport.session());// persistent login sessions
     //provagg
     app.use(app.router); //init routing
 
 });
 
-require('./app/routes.js')(app, passport,models); // load our routes and pass in our app and fully configured passport
+//require('./app/routes.js')(app, passport,models); // load our routes and pass in our app and fully configured passport
 
 // development only
 if (app.get('env') === 'development') {
